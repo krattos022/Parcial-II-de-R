@@ -1,0 +1,83 @@
+
+
+\documentclass{article}
+
+\begin{document}
+Fernando Ernesto Manzanares\\
+Ejercicio 3.
+<<>>=
+UID<- function(A,B){
+  Cont<-length(A)
+  Cont2<- length(B)
+  ifelse(Cont>Cont2, X<-c(1:Cont),X<-c(1:Cont2))
+  U<- X
+  I<- X
+
+    for (i in X) {
+      
+      U[2*i-1]<-A[i]
+      U[2*i]<-B[i]
+      
+      for (j in X) {
+        
+        if (A[i]==B[j]) {
+          
+          I[i]<-A[j]
+          print(I)
+      }
+     
+    }
+    
+    }
+    print(I)
+    print(U)
+  #sort(I, decreasing = FALSE)
+  #sort(U,decreasing = TRUE)
+}
+  
+@
+
+Ejercicio 1.
+<<>>=
+Pascal<- function(N){
+  v<- matrix(,N+1,N+1)
+  x<-N+1
+  for (i in 1:x) {
+    v[i]<-1
+    for (j in 1:x ) {
+      if (i==j) {
+        v[i,j]<-1
+      }
+      if (i!=j) {
+        
+      }
+     
+    }
+  }
+  return(v)
+}
+  
+@
+Ejercicio 2.
+<<>>=
+mediana<- function(x){
+  t<-sort(x, decreasing = FALSE)
+  y<-length(x)
+  print(t)
+ 
+  if (y%%2 == 1 ) {
+    med<- (length(x)/2)+0.5
+     Med<-t[med]
+  }
+  if (y%%2==0) {
+    med<- (length(x)+1)/2
+     Med<-(t[med+0.5] + t[med-0.5])/2
+    
+  }
+ 
+  return(Med)
+}
+
+@
+
+\end{document}
